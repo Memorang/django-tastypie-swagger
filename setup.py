@@ -13,7 +13,7 @@ except Exception:
 setup(
     # Metadata
     name='django-tastypie-swagger',
-    version='.'.join(map(str, tastypie_swagger.VERSION)),
+    version='.'.join(map(str, tastypie_swagger.VERSION)) + '-Memorang',
     description=description,
     long_description=longdesc,
     author='Concentric Sky',
