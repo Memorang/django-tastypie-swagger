@@ -6,7 +6,7 @@ import tastypie_swagger
 description = "An adapter to use swagger-ui with django-tastypie"
 
 try:
-    longdesc = open('README.rst').read()
+    longdesc = open('README.md').read()
 except Exception:
     longdesc = description
 
