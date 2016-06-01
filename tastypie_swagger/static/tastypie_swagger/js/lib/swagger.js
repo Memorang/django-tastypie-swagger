@@ -361,8 +361,9 @@ var SwaggerResource = function(resourceObj, api) {
           return _this.addApiDeclaration(responseObj);
         },
         error: function(response) {
-          return _this.api.fail("Unable to read api '" +
-            _this.name + "' from path " + _this.url + " (server returned " + response.statusText + ")");
+          console.log('Error', response);
+          // return _this.api.fail("Unable to read api '" +
+          //   _this.name + "' from path " + _this.url + " (server returned " + response.statusText + ")");
         }
       }
     };
