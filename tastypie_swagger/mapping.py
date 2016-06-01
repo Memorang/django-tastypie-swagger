@@ -11,7 +11,7 @@ except ImportError:
 
 from tastypie import fields
 
-from .utils import trailing_slash_or_none, urljoin_forced
+from tastypie_swagger.utils import trailing_slash_or_none, urljoin_forced
 
 logger = logging.getLogger(__name__)
 # Ignored POST fields

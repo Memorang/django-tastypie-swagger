@@ -8,7 +8,7 @@ from django.core.urlresolvers import reverse
 
 import tastypie
 
-from .mapping import ResourceSwaggerMapping
+from tastypie_swagger.mapping import ResourceSwaggerMapping
 
 
 class TastypieApiMixin(object):
