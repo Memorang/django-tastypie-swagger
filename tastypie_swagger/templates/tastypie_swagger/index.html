@@ -55,7 +55,7 @@
                 onComplete: function(swaggerApi, swaggerUi){
                     $("img[src$='throbber.gif']").attr("src", "{% static "tastypie_swagger/images/throbber.gif" %}");
                     if(console) {
-                        console.log("Loaded SwaggerUI");
+                        console.log("Loaded SwaggerUI")
                         console.log(swaggerApi);
                         console.log(swaggerUi);
                     }
@@ -70,7 +70,7 @@
                 docExpansion: "none"
             });
 
-            // window.swaggerUi.load();
+            window.swaggerUi.load();
         });
 
     </script>

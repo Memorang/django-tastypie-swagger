@@ -1286,7 +1286,6 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
       if (url.indexOf("http") !== 0) {
         url = this.buildUrl(window.location.href.toString(), url);
       }
-      log("<george> Url is", url);
       this.options.url = url;
       this.headerView.update(url);
       this.api = new SwaggerApi(this.options);
