@@ -320,14 +320,12 @@ SwaggerApi.prototype.help = function() {
 var SwaggerResource = function(resourceObj, api) {
   var _this = this;
   this.api = api;
-  this.api = this.api;
   consumes = (this.consumes | []);
   produces = (this.produces | []);
   this.path = this.api.resourcePath != null ? this.api.resourcePath : resourceObj.path;
   this.description = resourceObj.description;
 
-  var parts = this.path.split("/");
-  this.name = parts[parts.length - 1].replace('.{format}', '');
+  this.name = this.path.replace(/^\/|\/$/g, '');
   this.basePath = this.api.basePath;
   this.operations = {};
   this.operationsArray = [];
