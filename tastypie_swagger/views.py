@@ -9,6 +9,7 @@ from django.core.urlresolvers import reverse
 import tastypie
 
 from tastypie_swagger.mapping import ResourceSwaggerMapping
+from tastypie_swagger.utils import trailing_slash_or_none
 
 
 class TastypieApiMixin(object):
@@ -106,8 +107,10 @@ class ResourcesView(TastypieApiMixin, SwaggerApiDataMixin, JSONView):
     def get_context_data(self, *args, **kwargs):
         context = super(ResourcesView, self).get_context_data(*args, **kwargs)
 
+        trailing_slash = trailing_slash_or_none()
+
         # Construct schema endpoints from resources
-        apis = [{'path': '/%s' % name} for name in sorted(self.tastypie_api._registry.keys())]
+        apis = [{'path': '/{0}{1}'.format(name, trailing_slash)} for name in sorted(self.tastypie_api._registry.keys())]
         context.update({
             'basePath': self.request.build_absolute_uri(reverse('%s:schema' % self.kwargs.get('namespace'))).rstrip('/'),
             'apis': apis,
